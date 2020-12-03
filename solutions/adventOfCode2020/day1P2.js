@@ -1,4 +1,4 @@
-// Intake a list of numbers, find the pair  which adds to 2020 and then return thier product.
+// second part to the first day problem: intake the same list as before, however find the three pairs which add to 2020 and return their product
 const list = [
   1801,
   1324,
@@ -201,39 +201,26 @@ const list = [
   1965,
   1662,
 ];
-
-// Note this is a unreadable oneliner version, its poorly optimized.
+// same joke one liner just extended from before. Poorly optimized, I think this is like O(n^n)
 const index = async () => {
   const [answer] = list
     .map((element, index, array) =>
       array
-        .map((element2) =>
-          2020 === element + element2 ? element * element2 : false
+        .map((element2, index2, array2) =>
+          array2
+            .map((element3) =>
+              2020 === element + element2 + element3
+                ? element * element2 * element3
+                : false
+            )
+            .filter((x) => x)
         )
-        .filter((x) => x)
+        .flat()
     )
     .flat();
+
   console.log(answer);
   return answer;
 };
 
-// Here is a more readable version, still could be further optimized to not duplicate comparisions
-
-const readableAnswer = () => {
-  let answer;
-  list.some((element, index, array) => {
-    array.some((element2) => {
-      if (element + element2 === 2020) {
-        answer = element * element2;
-        return true;
-      }
-    });
-    // Short circuting when an answer is found.
-    if (answer) {
-      return true;
-    }
-  });
-  console.log(answer);
-  return answer;
-};
-module.exports = { index: readableAnswer };
+module.exports = { index };
