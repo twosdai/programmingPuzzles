@@ -1,0 +1,23 @@
+{
+  "name": "programmingPuzzles",
+  "version": "1.0.0",
+  "description": "This repository is filled with one file solutions to programmin problems and algorithms.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twosdai/programmingPuzzles.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/twosdai/programmingPuzzles/issues"
+  },
+  "homepage": "https://github.com/twosdai/programmingPuzzles#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
