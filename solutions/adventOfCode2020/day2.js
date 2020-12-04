@@ -3033,14 +3033,10 @@ const index = () => {
       }
       return acc;
     }, 0);
-    if (
-      policyLowerBound <= countOfLetter &&
-      countOfLetter <= policyUpperBound
-    ) {
-      return true;
-    } else {
-      return false;
-    }
+
+    return (
+      policyLowerBound <= countOfLetter && countOfLetter <= policyUpperBound
+    );
   }).length;
 
   console.log(result);
